@@ -1,0 +1,50 @@
+power-mode.txt
+--------------------------------------------------------------------------------
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
+(Override Group Config) set PoE Operating Mode to 802.3at PoE
+
+
+
+SKIP THE STUFF BELOW:
+--------------------------------------------------------------------------------
+
+(See ./ssh.txt)
+(See ./serial.txt)
+Login to the Ruckus CLI.
+
+
+
+ruckus> enable
+ruckus# ap-mode
+ruckus(ap-mode)# get lldp
+ruckus(ap-mode)# get lldp neighbors
+ruckus(ap-mode)# set lldp enable
+ruckus(ap-mode)# set lldp poe enable
+ruckus(ap-mode)# get power-mode
+ruckus(ap-mode)# set power-mode at
+
+(Apparently these settings are not persistent.)
+
+
+
+https://community.ruckuswireless.com/t5/Unleashed/Unleashed-R720-Not-Enough-Power-POE-HP2530-48G-PoE/m-p/37093/highlight/true
+
+Set the AP to .at mode:
+
+You can use the master AP's remote AP CLI feature which will run the same
+command for all the connected APs (only to the APs which are already connected
+and online in Unleashed) in once.
+
+ruckus>
+ruckus>enable
+ruckus#debug
+ruckus(debug)#remote_ap_cli -A "set power-mode at"
+
+or if you want to run it on specific APs, then use below command
+
+ruckus(debug)#remote_ap_cli -a aa:bb:cc:dd:ee:ff "set power-mode at"
+
+In above command, aa:bb:cc:dd:ee:ff is MAC address of the desired AP where you
+want to run the command.
+

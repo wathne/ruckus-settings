@@ -1,0 +1,252 @@
+settings.txt
+--------------------------------------------------------------------------------
+
+./cli-config-wlan.txt
+./dhcp-server.txt
+./firmware.txt
+./lovdata.txt
+./patches/root.patch.txt (./patches/unleashed.root.patch.dbg)
+./patches/unlock.patch.txt (./patches/unleashed.unlock.dbg)
+./power-mode.txt
+./root.txt
+./serial.txt
+./settings.txt <- YOU ARE HERE
+./ssh.txt
+./tftp-server.txt
+
+--------------------------------------------------------------------------------
+When finished, remember to:
+STOP DHCP SERVICE (See ./dhcp-server.txt)
+STOP TFTP SERVICE (See ./tftp-server.txt)
+REMOVE TFTP SERVICE FROM FIREWALL (See ./tftp-server.txt)
+--------------------------------------------------------------------------------
+
+(See https://support.ruckuswireless.com/articles/000012418)
+If a factory reset is necessary, press the reset button for more than 8 seconds.
+
+(See ./dhcp-server.txt)
+Setup a dhcp server and connect directly to the AP/switch/injector with an
+ethernet cable. Do not use a wireless connection.
+
+(Find the ip address with nmap 192.168.10.0/24)
+(See ./ssh.txt)
+(See ./serial.txt)
+Login to the Ruckus CLI.
+ruckus> enable
+ruckus# set-factory
+
+(See ./tftp-server.txt)
+(See ./firmware.txt)
+Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
+
+Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
+Complete the initial setup, WLAN: {My name}-5GHz
+
+(See ./patches/root.patch.txt)
+(See ./patches/unlock.patch.txt)
+(See ./root.txt)
+Patch.
+Reboot.
+Factory reset.
+
+Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
+Complete the initial setup, WLAN: {My name}-5GHz
+
+(See ./power-mode.txt)
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
+(Override Group Config) set PoE Operating Mode to 802.3at PoE
+
+Admin & Services -> System -> System Info:
+set Primary Preferred Master
+disable Switch Approval
+
+Admin & Services -> System -> IP Settings -> Management Interface:
+(For Altibox router/gateway as 192.168.10.1)
+Enable IPv4 Management Interface
+set IP Address to 192.168.10.20
+set Netmask to 255.255.255.0
+
+Go to https://192.168.10.20
+
+Admin & Services -> System -> IP Settings -> IP Settings:
+(For Altibox router/gateway as 192.168.10.1)
+set Manual
+set IP Address to 192.168.10.21
+set Netmask to 255.255.255.0
+set Gateway to 192.168.10.1
+set Primary DNS Server to 192.168.10.1
+set Secondary DNS Server to 1.1.1.1
+
+Admin & Services -> System -> System Time:
+set time zone to (GMT +1:00) Brussels, Copenhagen, Madrid, Paris
+(click Apply)
+
+Admin & Services -> Services -> Radio Control -> Self Healing:
+set 2.4GHz to disabled
+set 5GHz to disabled
+
+Admin & Services -> Services -> Radio Control -> Background Scanning:
+set 2.4GHz to 300 seconds
+set 5GHz to 300 seconds
+(click Apply)
+set 2.4GHz to disabled
+set 5GHz to disabled
+(click Apply)
+
+Admin & Services -> Services -> Radio Control -> Radar Avoidance Pre-Scanning:
+disable Radar Avoidance Pre-Scanning (We will not use any DFS channels.)
+
+Admin & Services -> Administration -> Diagnostics -> SpeedFlex Service:
+disable SpeedFlex Service
+
+Admin & Services -> Administration -> Network Management -> Unleashed Multi-Site Manager:
+enable Unleashed Multi-Site Manager
+set URL to https://umm.home.arpa/intune/server
+(click Apply)
+disable Unleashed Multi-Site Manager
+(click Apply)
+
+Admin & Services -> Administration -> Mobile App -> Remote Management & Mobile App Notification:
+disable Mobile App Notification
+disable Mobile App Remote Management
+
+
+SSID setup:
+----------------------
+{My name}-5GHz
+{My name}-2.4GHz-IoT
+{My name}-5GHz-gjest
+{My name}-2.4GHz-gjest
+----------------------
+
+
+WiFi Networks -> {My name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
+disable Background Scanning
+enable WLAN on 5 GHz only
+disable Wi-Fi 6
+
+WiFi Networks -> {My name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
+set Directed MC/BC Threshold to 0
+
+WiFi Networks -> Create WLAN:
+set Name to {My name}-2.4GHz-IoT
+set Usage Type to Standard
+set Authentication Method to Open
+set Encryption Method to WPA2
+set Password (Use a different password than {My name}-5GHz)
+-> Show Advanced Options -> Radio Control:
+disable Background Scanning
+enable WLAN on 2.4 GHz only
+disable Wi-Fi 6
+-> Show Advanced Options -> Others:
+set Directed MC/BC Threshold to 0
+(click OK)
+
+WiFi Networks -> Create WLAN:
+set Name to {My name}-5GHz-gjest
+set Usage Type to Standard
+set Authentication Method to Open
+set Encryption Method to WPA2
+set Password (Use the same password as for {My name}-2.4GHz-gjest)
+-> Show Advanced Options -> Access Control:
+create new Layer3/4 ACL:
+set Name to guest-acl
+set Default Mode to Allow all by default
+set Rules to:
+| Order | Desc. | Type  | Src. Addr. | Dest. Addr.        | Advanced Options   |
+|-------|-------|-------|------------|--------------------|--------------------|
+| 1     |       | Allow | Any        | 192.168.10.1/32    | Any, Any, Any, Any |
+| 2     |       | Deny  | Any        | 10.0.0.0/8         | Any, Any, Any, Any |
+| 3     |       | Deny  | Any        | 172.16.0.0/12      | Any, Any, Any, Any |
+| 4     |       | Deny  | Any        | 192.168.0.0/16     | Any, Any, Any, Any |
+(click OK)
+-> Show Advanced Options -> Radio Control:
+disable Background Scanning
+enable WLAN on 5 GHz only
+disable Wi-Fi 6
+-> Show Advanced Options -> Others:
+enable Isolate wireless client traffic from other clients on the same AP.
+enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
+create new allowlist:
+set Name to guest-allowlist
+enable Auto Allowlist
+(click OK)
+set Directed MC/BC Threshold to 0
+(click OK)
+
+WiFi Networks -> Create WLAN:
+set Name to {My name}-2.4GHz-gjest
+set Usage Type to Standard
+set Authentication Method to Open
+set Encryption Method to WPA2
+set Password (Use the same password as for {My name}-5GHz-gjest)
+-> Show Advanced Options -> Access Control:
+create new Layer3/4 ACL:
+set Name to guest-acl
+set Default Mode to Allow all by default
+set Rules to:
+| Order | Desc. | Type  | Src. Addr. | Dest. Addr.        | Advanced Options   |
+|-------|-------|-------|------------|--------------------|--------------------|
+| 1     |       | Allow | Any        | 192.168.10.1/32    | Any, Any, Any, Any |
+| 2     |       | Deny  | Any        | 10.0.0.0/8         | Any, Any, Any, Any |
+| 3     |       | Deny  | Any        | 172.16.0.0/12      | Any, Any, Any, Any |
+| 4     |       | Deny  | Any        | 192.168.0.0/16     | Any, Any, Any, Any |
+(click OK)
+-> Show Advanced Options -> Radio Control:
+disable Background Scanning
+enable WLAN on 2.4 GHz only
+disable Wi-Fi 6
+-> Show Advanced Options -> Others:
+enable Isolate wireless client traffic from other clients on the same AP.
+enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
+create new allowlist:
+set Name to guest-allowlist
+enable Auto Allowlist
+(click OK)
+set Directed MC/BC Threshold to 0
+(click OK)
+
+Access Points -> Group View -> System Default -> Edit AP Group -> Radio (2.4G):
+set Channelization to 20
+set Radio 2.4 GHz to 1,6,11
+
+Access Points -> Group View -> System Default -> Edit AP Group -> Radio (5G):
+set Channelization to 20
+set Radio 5.0 GHz Indoor to channel 36,40,44,48
+set Radio 5.0 GHz Outdoor to channel 36,40,44,48
+
+Access Points -> Group View -> System Default -> Edit AP Group -> Radio (5G):
+set Channelization to Auto
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
+set GPS Coordinates(Latitude,Longitude) to GPS coordinates
+
+(See ./lovdata.txt)
+(Assuming 100 mW E.I.R.P. (20 dBm) at 2.4 GHz band, channels 1,6,11.)
+(Assuming 200 mW E.I.R.P. (23 dBm) at 5 GHz band, channels 36,40,44,48.)
+(Antenna Gain (max) for R510, R610 and R710 is up to 3dBi.)
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 Ghz:
+(Override Group Config) set Channelization to 20
+(Override Group Config) set Channel to 1/6/11
+(Override Group Config) set TX Power to Full (Only for uncongested areas.)
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 Ghz:
+(Override Group Config) set Channelization to 40 (Only for solo AP or max 2 AP.)
+(Override Group Config) set Channel to 36/44
+(Override Group Config) set TX Power to Full (Only for uncongested areas.)
+
+(See ./cli-config-wlan.txt)
+ofdm-only
+no wifi6
+bss-minrate 12
+80211w-pmf 2 (80211w-pmf 1)
+no https-redirection
+
+--------------------------------------------------------------------------------
+When finished, remember to:
+STOP DHCP SERVICE (See ./dhcp-server.txt)
+STOP TFTP SERVICE (See ./tftp-server.txt)
+REMOVE TFTP SERVICE FROM FIREWALL (See ./tftp-server.txt)
+--------------------------------------------------------------------------------
+

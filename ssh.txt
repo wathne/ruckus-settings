@@ -1,0 +1,32 @@
+ssh.txt
+--------------------------------------------------------------------------------
+
+(See ../docs/ruckus_unleashed_200.13_command_line_interface_reference_guide_11-22-2022.pdf)
+
+(See page 38, under Unleashed CLI Setup Wizard)
+When the Unleashed AP is in factory default state, ..., connect to the Unleashed
+CLI using SSH (default address: unleashed.ruckuswireless.com or 10.154.231.125),
+and log in using the default user name and password:
+ - Please login: super
+ - Password: sp-admin
+
+
+
+(Find the ip address with nmap 192.168.10.0/24)
+
+
+
+nano ~/.ssh/config
+
+Host 192.168.10.20
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
+
+Host 192.168.10.21
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
+
+Host 192.168.10.20?
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
+

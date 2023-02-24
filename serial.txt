@@ -1,0 +1,40 @@
+serial.txt
+--------------------------------------------------------------------------------
+
+(See ../docs/ruckus_unleashed_200.13_command_line_interface_reference_guide_11-22-2022.pdf)
+
+
+
+Ruckus AP pinout:
+1 receive
+2 blank (no pin)
+3 Vcc (not needed)
+4 ground
+5 transmit
+
+3.3V logic level? Tested OK.
+5V logic level? Untested.
+RS232 logic level? Untested.
+
+115200 baud rate
+8 data bits
+1 stop bit
+no parity
+no flow control
+
+FTDI TTL-232R to Ruckus AP:
+TXD(orange) to RXD(pin 1)
+GND(black) to GND(pin 4)
+RXD(yellow) to TXD(pin 5)
+
+Picocom:
+sudo picocom /dev/ttyUSB0 --baud 115200 --databits 8 --stopbits 1 --parity n --flow n
+
+PuTTY Configuration
+-> Category -> Connection -> Serial:
+Bits per second: 115200
+Data bits: 8
+Stop bits: 1
+Parity: None
+Flow control: None
+

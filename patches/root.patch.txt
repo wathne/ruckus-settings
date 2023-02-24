@@ -1,0 +1,27 @@
+root.patch.txt
+--------------------------------------------------------------------------------
+
+https://github.com/ms264556/Hackery/blob/master/pages/UnleashedAddRootShell.md
+
+See ./unleashed.root.patch.dbg
+
+I made the patch myself after inspecting the bash and python code.
+The checksum of my patch and the precompiled(ms264556) patch did not match.
+The most likely reason for this checksum mismatch is that tar preserves the
+"last modified" date and thus the tar binaries will be different.
+After decrypting both patches, the internal files have matching checksums.
+After re-encrypting both of the decrypted patches, the checksums are again the 
+same as before they were decrypted, that is, not matching.
+
+Welcome to Ruckus Unleashed Network Command Line Interface
+ruckus> enable
+ruckus# debug
+You have all rights in this mode.
+ruckus(debug)# script
+ruckus(script)# exec .root.sh
+
+Ruckus Wireless Unleashed -- Command Line Interface
+Enter 'help' for a list of built-in commands.
+
+ruckus$ 
+

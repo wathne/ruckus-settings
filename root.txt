@@ -1,0 +1,72 @@
+root.txt
+--------------------------------------------------------------------------------
+
+(See ./ssh.txt)
+(See ./serial.txt)
+Login to the Ruckus CLI.
+
+
+
+Ruckus AP with root patch (See ./patches/root.patch.txt):
+---------------------------------------------------------
+
+Welcome to Ruckus Unleashed Network Command Line Interface
+ruckus> enable
+ruckus# debug
+You have all rights in this mode.
+ruckus(debug)# script
+ruckus(script)# exec .root.sh
+
+Ruckus Wireless Unleashed -- Command Line Interface
+Enter 'help' for a list of built-in commands.
+
+ruckus$ 
+
+
+
+Interesting root stuff:
+-----------------------
+
+# show Tx-Power.
+ruckus$ iwconfig
+
+
+# Clear the control files.
+ruckus$ rm /writable/fw/main.cntl
+ruckus$ rm /writable/fw/bkup.cntl
+
+
+# Unlock all channels/countries.
+ruckus$ bsp set fixed_ctry_code 0
+ruckus$ bsp commit
+
+
+# List all bsp options.
+ruckus$ ls -lh /proc/v54bsp/
+
+
+# Show value of bsp option.
+ruckus$ cat /proc/v54bsp/fixed_ctry_code
+
+
+ruckus$ df -h
+
+
+ruckus$ cat /etc/version
+
+
+ruckus$ cat /proc/cmdline
+
+
+ruckus$ cat /proc/mounts
+
+
+ruckus$ cat /proc/cpuinfo
+
+
+ruckus$ cat /proc/meminfo
+
+
+ruckus$ COLUMNS=2000 LINES=3000 top -bn1
+
+

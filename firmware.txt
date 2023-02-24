@@ -1,0 +1,79 @@
+firmware.txt
+--------------------------------------------------------------------------------
+
+(See ./dhcp-server.txt)
+Setup a dhcp server and connect directly to the AP/switch/injector with an
+ethernet cable. Do not use a wireless connection.
+
+
+
+(See ./tftp-server.txt)
+Setup a tftp server.
+
+
+
+(See ./ssh.txt)
+(See ./serial.txt)
+Login to the Ruckus CLI.
+
+
+
+ruckus> enable
+ruckus# set-factory
+
+ruckus> enable
+ruckus# ap-mode
+ruckus(ap-mode)# fw set host 192.168.10.10
+ruckus(ap-mode)# fw set proto tftp
+ruckus(ap-mode)# fw set port 69
+ruckus(ap-mode)# fw set control r710_13_cntrl.rcks
+ruckus(ap-mode)# fw update
+ruckus(ap-mode)# reboot
+
+Repeat this until both firmware slots "main"(1) and "bkup"(2) are updated.
+
+ruckus> enable
+ruckus# ap-mode
+ruckus(ap-mode)# fw show all
+ruckus(ap-mode)# fw check main
+ruckus(ap-mode)# fw check bkup
+
+
+
+(Use the Linux command "du -b" to get apparent size in bytes.)
+
+(There will be an early warning about ctl/hdr file size mismatch, this warning
+is expected. This warning would go away if we subtracted 3160 bytes, but then
+the next size check would fail and stop the process. Most likely the image has a
+tail of 3160 bytes containing certificates and checksums. This tail is not
+accounted for by the first size check, but the tail is accounted for by the
+second size check.)
+(39881816-3160=39878656)
+(41184344-3160=41181184)
+(40127576-3160=40124416)
+(41626712-3160=41623552)
+
+r710_12_cntrl.rcks
+[rcks_fw.main]
+192.168.10.10
+R710_200.12.10.105.129.bl7
+39881816
+
+r710_13_cntrl.rcks
+[rcks_fw.main]
+192.168.10.10
+R710_200.13.6.1.319.bl7
+41184344
+
+r510_12_cntrl.rcks
+[rcks_fw.main]
+192.168.10.10
+R510_200.12.10.105.129.bl7
+40127576
+
+r510_13_cntrl.rcks
+[rcks_fw.main]
+192.168.10.10
+R510_200.13.6.1.319.bl7
+41626712
+
