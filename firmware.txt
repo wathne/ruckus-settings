@@ -40,7 +40,9 @@ ruckus(ap-mode)# fw check bkup
 
 
 
-(Use the Linux command "du -b" to get apparent size in bytes.)
+(See ./firmware-control-files/*_cntrl.rcks)
+
+(Use the Linux command "du -b" to get apparent size of firmware files in bytes.)
 
 (There will be an early warning about ctl/hdr file size mismatch, this warning
 is expected. This warning would go away if we subtracted 3160 bytes, but then

@@ -26,6 +26,7 @@ firewall-cmd --list-all
 (OPTIONAL/PERSISTENT: firewall-cmd --permanent --add-service tftp)
 
 (See ./firmware.txt)
+(See ./firmware-control-files/*_cntrl.rcks)
 cp R710_200.13.6.1.319.bl7 /var/lib/tftpboot/
 cp r710_13_cntrl.rcks /var/lib/tftpboot/
 
@@ -54,5 +55,6 @@ Ruckus(client, 192.168.10.20?):
 Login to the Ruckus CLI.
 
 (See ./firmware.txt)
+(See ./firmware-control-files/*_cntrl.rcks)
 Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
 
