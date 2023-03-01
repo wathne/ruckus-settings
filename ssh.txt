@@ -17,7 +17,7 @@ and log in using the default user name and password:
 
 
 nano ~/.ssh/config
-
+------------------
 Host 192.168.10.20
     PubkeyAcceptedAlgorithms +ssh-rsa
     HostkeyAlgorithms +ssh-rsa
@@ -29,4 +29,6 @@ Host 192.168.10.21
 Host 192.168.10.20?
     PubkeyAcceptedAlgorithms +ssh-rsa
     HostkeyAlgorithms +ssh-rsa
+
+------------------
 

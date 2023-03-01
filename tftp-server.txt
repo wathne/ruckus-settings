@@ -12,29 +12,30 @@ Fedora(host, 192.168.10.10):
 
 dnf install tftp-server tftp
 
-(mkdir /etc/systemd/system/tftp.service.d/)
-(nano /etc/systemd/system/tftp.service.d/server.conf)
-(This .conf file can be used, for example, to make changes to the options when
-calling the service.)
+(OPTIONAL/PERSISTENT: mkdir /etc/systemd/system/tftp.service.d/)
+(OPTIONAL/PERSISTENT: nano /etc/systemd/system/tftp.service.d/server.conf)
+(OPTIONAL/PERSISTENT: This .conf file can be used, for example, to make changes
+  to the options when calling the service.)
 
-(systemctl enable tftp.socket)
 systemctl start tftp.socket
 systemctl status tftp.socket
+(OPTIONAL/PERSISTENT: systemctl enable tftp.socket)
 
-(firewall-cmd --permanent --add-service tftp)
 firewall-cmd --add-service tftp
 firewall-cmd --list-all
+(OPTIONAL/PERSISTENT: firewall-cmd --permanent --add-service tftp)
 
-sudo cp R710_200.13.6.1.319.bl7 /var/lib/tftpboot/
-sudo cp r710_13_cntrl.rcks /var/lib/tftpboot/
+(See ./firmware.txt)
+cp R710_200.13.6.1.319.bl7 /var/lib/tftpboot/
+cp r710_13_cntrl.rcks /var/lib/tftpboot/
 
-(systemctl disable tftp.socket)
 systemctl stop tftp.socket
 systemctl status tftp.socket
+(OPTIONAL/PERSISTENT: systemctl disable tftp.socket)
 
-(firewall-cmd --permanent --remove-service tftp)
 firewall-cmd --remove-service tftp
 firewall-cmd --list-all
+(OPTIONAL/PERSISTENT: firewall-cmd --permanent --remove-service tftp)
 
 
 
@@ -45,8 +46,8 @@ https://wiki.archlinux.org/title/TFTP
 
 
 
-Ruckus(client):
----------------
+Ruckus(client, 192.168.10.20?):
+-------------------------------
 
 (See ./ssh.txt)
 (See ./serial.txt)
