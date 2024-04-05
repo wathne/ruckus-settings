@@ -227,7 +227,10 @@ Access Points -> Group View -> System Default -> Edit AP Group -> Radio (5G):
 set Channelization to Auto
 
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
-set GPS Coordinates(Latitude,Longitude) to GPS coordinates
+(OPTIONAL) set Device Name
+(OPTIONAL) set Description
+(OPTIONAL) set Location
+(OPTIONAL) set GPS Coordinates(Latitude,Longitude)
 
 (See ./lovdata.txt)
 (Assuming 100 mW E.I.R.P. (20 dBm) at 2.4 GHz band, channels 1,6,11.)
