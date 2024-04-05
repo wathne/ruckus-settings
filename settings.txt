@@ -84,7 +84,6 @@ set Secondary DNS Server to 1.1.1.1
 
 Admin & Services -> System -> System Time:
 set time zone to (GMT +1:00) Brussels, Copenhagen, Madrid, Paris
-(click Apply)
 
 Admin & Services -> Services -> Radio Control -> Self Healing:
 set 2.4GHz to disabled
@@ -152,7 +151,6 @@ enable WLAN on 2.4 GHz only
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
-(click OK)
 
 WiFi Networks -> Create WLAN:
 set Name to {name}-5GHz-guest
@@ -184,7 +182,6 @@ set Name to guest-allowlist
 enable Auto Allowlist
 (click OK)
 set Directed MC/BC Threshold to 0
-(click OK)
 
 WiFi Networks -> Create WLAN:
 set Name to {name}-2.4GHz-guest
@@ -216,7 +213,6 @@ set Name to guest-allowlist
 enable Auto Allowlist
 (click OK)
 set Directed MC/BC Threshold to 0
-(click OK)
 
 Access Points -> Group View -> System Default -> Edit AP Group -> Radio (2.4G):
 set Channelization to 20
