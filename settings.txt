@@ -81,6 +81,9 @@ set Netmask to 255.255.255.0
 set Gateway to 192.168.10.1
 set Primary DNS Server to 192.168.10.1
 set Secondary DNS Server to 1.1.1.1
+(click Apply)
+set DHCP
+(click Apply)
 
 Admin & Services -> System -> System Time:
 set time zone to (GMT +1:00) Brussels, Copenhagen, Madrid, Paris
