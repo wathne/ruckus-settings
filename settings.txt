@@ -137,6 +137,7 @@ disable Background Scanning
 enable WLAN on 5 GHz only
 
 WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
+set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
 
 WiFi Networks -> Create WLAN:
@@ -149,6 +150,7 @@ set Password (Use a different password than for {name}-5GHz)
 disable Background Scanning
 enable WLAN on 2.4 GHz only
 -> Show Advanced Options -> Others:
+set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
 (click OK)
 
@@ -174,6 +176,7 @@ set Rules to:
 disable Background Scanning
 enable WLAN on 5 GHz only
 -> Show Advanced Options -> Others:
+set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
 create new allowlist:
@@ -205,6 +208,7 @@ set Rules to:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
 -> Show Advanced Options -> Others:
+set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
 create new allowlist:
