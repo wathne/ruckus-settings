@@ -125,7 +125,6 @@ SSID setup:
 WiFi Networks -> {My name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
-disable Wi-Fi 6
 
 WiFi Networks -> {My name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
 set Directed MC/BC Threshold to 0
@@ -139,7 +138,6 @@ set Password (Use a different password than {My name}-5GHz)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
-disable Wi-Fi 6
 -> Show Advanced Options -> Others:
 set Directed MC/BC Threshold to 0
 (click OK)
@@ -165,7 +163,6 @@ set Rules to:
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
-disable Wi-Fi 6
 -> Show Advanced Options -> Others:
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
@@ -197,7 +194,6 @@ set Rules to:
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
-disable Wi-Fi 6
 -> Show Advanced Options -> Others:
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
@@ -240,7 +236,6 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 Ghz:
 
 (See ./cli-config-wlan.txt)
 ofdm-only
-no wifi6
 bss-minrate 12
 80211w-pmf 2 (80211w-pmf 1)
 
