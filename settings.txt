@@ -163,12 +163,12 @@ create new Layer3/4 ACL:
 set Name to guest-acl
 set Default Mode to Allow all by default
 set Rules to:
-| Order | Desc. | Type  | Src. Addr. | Dest. Addr.        | Advanced Options   |
-|-------|-------|-------|------------|--------------------|--------------------|
-| 1     |       | Allow | Any        | 192.168.10.1/32    | Any, Any, Any, Any |
-| 2     |       | Deny  | Any        | 10.0.0.0/8         | Any, Any, Any, Any |
-| 3     |       | Deny  | Any        | 172.16.0.0/12      | Any, Any, Any, Any |
-| 4     |       | Deny  | Any        | 192.168.0.0/16     | Any, Any, Any, Any |
+| Order | Description  | Type  | Src | Destination Addr.  | Advanced Options   |
+|-------|--------------|-------|-----|--------------------|--------------------|
+| 1     | gateway      | Allow | Any | 192.168.10.1/32    | Any, Any, Any, Any |
+| 2     |              | Deny  | Any | 192.168.0.0/16     | Any, Any, Any, Any |
+| 3     |              | Deny  | Any | 10.0.0.0/8         | Any, Any, Any, Any |
+| 4     |              | Deny  | Any | 172.16.0.0/12      | Any, Any, Any, Any |
 (click OK)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
@@ -194,12 +194,12 @@ create new Layer3/4 ACL:
 set Name to guest-acl
 set Default Mode to Allow all by default
 set Rules to:
-| Order | Desc. | Type  | Src. Addr. | Dest. Addr.        | Advanced Options   |
-|-------|-------|-------|------------|--------------------|--------------------|
-| 1     |       | Allow | Any        | 192.168.10.1/32    | Any, Any, Any, Any |
-| 2     |       | Deny  | Any        | 10.0.0.0/8         | Any, Any, Any, Any |
-| 3     |       | Deny  | Any        | 172.16.0.0/12      | Any, Any, Any, Any |
-| 4     |       | Deny  | Any        | 192.168.0.0/16     | Any, Any, Any, Any |
+| Order | Description  | Type  | Src | Destination Addr.  | Advanced Options   |
+|-------|--------------|-------|-----|--------------------|--------------------|
+| 1     | gateway      | Allow | Any | 192.168.10.1/32    | Any, Any, Any, Any |
+| 2     |              | Deny  | Any | 192.168.0.0/16     | Any, Any, Any, Any |
+| 3     |              | Deny  | Any | 10.0.0.0/8         | Any, Any, Any, Any |
+| 4     |              | Deny  | Any | 172.16.0.0/12      | Any, Any, Any, Any |
 (click OK)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
