@@ -141,7 +141,7 @@ set Name to {name}-2.4GHz-IoT
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use a different password than {name}-5GHz)
+set Password (Use a different password than for {name}-5GHz)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
