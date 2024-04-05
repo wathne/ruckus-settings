@@ -1,7 +1,10 @@
 unlock.patch.txt
 --------------------------------------------------------------------------------
 
-https://github.com/ms264556/Hackery/blob/master/pages/RuckusCountryCodeChange.md
+Downgrade to R710_200.13.6.1.319.bl7 or any version from before 30 August 2023
+before applying the patch.
+
+See https://github.com/ms264556/Hackery/blob/c0de444ea39d38b1e3dde20f323ca3ca0dcd698f/pages/RuckusCountryCodeChange.md
 
 See ./unleashed.unlock.dbg
 
