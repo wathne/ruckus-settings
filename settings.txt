@@ -101,6 +101,9 @@ set 5GHz to disabled
 Admin & Services -> Services -> Radio Control -> Radar Avoidance Pre-Scanning:
 disable Radar Avoidance Pre-Scanning (We will not use any DFS channels.)
 
+Admin & Services -> Administration -> Diagnostics -> Events:
+set Event Log Level to Critical & Warning
+
 Admin & Services -> Administration -> Diagnostics -> SpeedFlex Service:
 disable SpeedFlex Service
 
