@@ -59,6 +59,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
 (Override Group Config) set PoE Operating Mode to 802.3at PoE
 
 Admin & Services -> System -> System Info:
+set Name to {name}-Ruckus-Unleashed
 set Primary Preferred Master
 disable Switch Approval
 
