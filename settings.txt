@@ -42,7 +42,7 @@ ruckus# set-factory
 Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
-Complete the initial setup, WLAN: {My name}-5GHz
+Complete the initial setup, WLAN: {name}-5GHz
 
 (See ./patches/root.patch.txt)
 (See ./patches/unlock.patch.txt)
@@ -52,7 +52,7 @@ Reboot.
 Factory reset.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
-Complete the initial setup, WLAN: {My name}-5GHz
+Complete the initial setup, WLAN: {name}-5GHz
 
 (See ./power-mode.txt)
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
@@ -115,26 +115,26 @@ disable Mobile App Remote Management
 
 SSID setup:
 ----------------------
-{My name}-5GHz
-{My name}-2.4GHz-IoT
-{My name}-5GHz-gjest
-{My name}-2.4GHz-gjest
+{name}-5GHz
+{name}-2.4GHz-IoT
+{name}-5GHz-guest
+{name}-2.4GHz-guest
 ----------------------
 
 
-WiFi Networks -> {My name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
+WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
 
-WiFi Networks -> {My name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
+WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
 set Directed MC/BC Threshold to 0
 
 WiFi Networks -> Create WLAN:
-set Name to {My name}-2.4GHz-IoT
+set Name to {name}-2.4GHz-IoT
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use a different password than {My name}-5GHz)
+set Password (Use a different password than {name}-5GHz)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
@@ -143,11 +143,11 @@ set Directed MC/BC Threshold to 0
 (click OK)
 
 WiFi Networks -> Create WLAN:
-set Name to {My name}-5GHz-gjest
+set Name to {name}-5GHz-guest
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use the same password as for {My name}-2.4GHz-gjest)
+set Password (Use the same password as for {name}-2.4GHz-guest)
 -> Show Advanced Options -> Access Control:
 create new Layer3/4 ACL:
 set Name to guest-acl
@@ -174,11 +174,11 @@ set Directed MC/BC Threshold to 0
 (click OK)
 
 WiFi Networks -> Create WLAN:
-set Name to {My name}-2.4GHz-gjest
+set Name to {name}-2.4GHz-guest
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use the same password as for {My name}-5GHz-gjest)
+set Password (Use the same password as for {name}-5GHz-guest)
 -> Show Advanced Options -> Access Control:
 create new Layer3/4 ACL:
 set Name to guest-acl

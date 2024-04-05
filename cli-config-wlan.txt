@@ -10,25 +10,25 @@ Login to the Ruckus CLI.
 ruckus> enable
 ruckus# config
 
-ruckus(config)# wlan "{My name}-5GHz"
+ruckus(config)# wlan "{name}-5GHz"
 ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 2
 ruckus(config-wlan)# end
 
-ruckus(config)# wlan "{My name}-2.4GHz-IoT"
+ruckus(config)# wlan "{name}-2.4GHz-IoT"
 ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 1
 ruckus(config-wlan)# end
 
-ruckus(config)# wlan "{My name}-5GHz-gjest"
+ruckus(config)# wlan "{name}-5GHz-guest"
 ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 2
 ruckus(config-wlan)# end
 
-ruckus(config)# wlan "{My name}-2.4GHz-gjest"
+ruckus(config)# wlan "{name}-2.4GHz-guest"
 ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 1
