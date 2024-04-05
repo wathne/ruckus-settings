@@ -15,7 +15,6 @@ ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# no wifi6
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 2
-ruckus(config-wlan)# no https-redirection
 ruckus(config-wlan)# end
 
 ruckus(config)# wlan "{My name}-2.4GHz-IoT"
@@ -23,7 +22,6 @@ ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# no wifi6
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 1
-ruckus(config-wlan)# no https-redirection
 ruckus(config-wlan)# end
 
 ruckus(config)# wlan "{My name}-5GHz-gjest"
@@ -31,7 +29,6 @@ ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# no wifi6
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 2
-ruckus(config-wlan)# no https-redirection
 ruckus(config-wlan)# end
 
 ruckus(config)# wlan "{My name}-2.4GHz-gjest"
@@ -39,7 +36,6 @@ ruckus(config-wlan)# ofdm-only
 ruckus(config-wlan)# no wifi6
 ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 1
-ruckus(config-wlan)# no https-redirection
 ruckus(config-wlan)# end
 
 ruckus(config)# end
@@ -55,13 +51,11 @@ bss-minrate <NUMBER> Sets the minimum transmission rate of the WLAN in the BSS
                      current value of mgmt-tx-rate and ofdm-only according to
                      the selected value.)
 80211w-pmf <NUMBER>  Sets 802.11w PMF 0:Disable,1:Optional,2:Required.
-https-redirection    Enables https redirection.
 --------------------------------------------------------------------------------
 no ofdm-only         Disables the mode to supoort OFDM rate only.
 no wifi6             Disables the mode to supoort wifi6.
 no bss-minrate       Disables the minimum transmission rate of the WLAN in the
                      BSS.
 no 80211w-pmf        Disables 802.11w PMF.
-no https-redirection Disables https redirection.
 --------------------------------------------------------------------------------
 

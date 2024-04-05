@@ -243,7 +243,6 @@ ofdm-only
 no wifi6
 bss-minrate 12
 80211w-pmf 2 (80211w-pmf 1)
-no https-redirection
 
 --------------------------------------------------------------------------------
 When finished, remember to:
