@@ -7,15 +7,15 @@ ethernet cable. Do not use a wireless connection.
 
 
 
-Fedora(host, 192.168.10.10):
-----------------------------
+Fedora(server, 192.168.10.10):
+------------------------------
 
 dnf install tftp-server tftp
 
-(OPTIONAL/PERSISTENT: mkdir /etc/systemd/system/tftp.service.d/)
+/etc/systemd/system/tftp.service.d/server.conf can be used to make changes to
+the options when calling the service.
+(OPTIONAL/PERSISTENT: mkdir /etc/systemd/system/tftp.service.d)
 (OPTIONAL/PERSISTENT: nano /etc/systemd/system/tftp.service.d/server.conf)
-(OPTIONAL/PERSISTENT: This .conf file can be used, for example, to make changes
-  to the options when calling the service.)
 
 systemctl start tftp.socket
 systemctl status tftp.socket
@@ -40,8 +40,8 @@ firewall-cmd --list-all
 
 
 
-Arch(host, 192.168.10.10):
---------------------------
+Arch(server, 192.168.10.10):
+----------------------------
 
 https://wiki.archlinux.org/title/TFTP
 
