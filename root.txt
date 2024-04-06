@@ -27,7 +27,7 @@ ruckus$
 Interesting root stuff:
 -----------------------
 
-# show Tx-Power.
+# Show Tx-Power.
 ruckus$ iwconfig
 
 
