@@ -32,7 +32,7 @@ GND(black) to GND(pin 4)
 RXD(yellow) to TXD(pin 5)
 
 Picocom:
-sudo picocom /dev/ttyUSB0 --baud 115200 --databits 8 --stopbits 1 --parity n --flow n
+user@fedora:~$ picocom /dev/ttyUSB0 --baud 115200 --databits 8 --stopbits 1 --parity n --flow n
 
 PuTTY Configuration
 -> Category -> Connection -> Serial:
