@@ -16,6 +16,19 @@ After decrypting both patches, the internal files have matching checksums.
 After re-encrypting both of the decrypted patches, the checksums are again the 
 same as before they were decrypted, that is, not matching.
 
+The root patch will create an executable .root.sh script:
+---------------------------------------------------------
+ruckus$ cat <<EOF >/writable/etc/scripts/.root.sh
+ruckus$ #!/bin/sh
+ruckus$ #RUCKUS#
+ruckus$ /bin/stty echo
+ruckus$ /bin/sh
+ruckus$ EOF
+ruckus$ chmod +x /writable/etc/scripts/.root.sh
+---------------------------------------------------------
+
+
+
 Welcome to Ruckus Unleashed Network Command Line Interface
 ruckus> enable
 ruckus# debug

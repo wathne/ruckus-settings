@@ -16,3 +16,9 @@ After decrypting both patches, the internal files have matching checksums.
 After re-encrypting both of the decrypted patches, the checksums are again the 
 same as before they were decrypted, that is, not matching.
 
+The unlock patch will set fixed_ctry_code to 0:
+-----------------------------------------------
+ruckus$ bsp set fixed_ctry_code 0
+ruckus$ bsp commit
+-----------------------------------------------
+
