@@ -8,7 +8,7 @@ ethernet cable. Do not use a wireless connection.
 
 
 (See ./tftp-server.txt)
-Setup a tftp server.
+Setup a tftp server and prepare the firmware and a firmware control file.
 
 
 
@@ -26,7 +26,7 @@ ruckus# ap-mode
 ruckus(ap-mode)# fw set host 192.168.10.10
 ruckus(ap-mode)# fw set proto tftp
 ruckus(ap-mode)# fw set port 69
-ruckus(ap-mode)# fw set control r710_13_cntrl.rcks
+ruckus(ap-mode)# fw set control r710_14_cntrl.rcks
 ruckus(ap-mode)# fw update
 ruckus(ap-mode)# reboot
 
@@ -41,41 +41,50 @@ ruckus(ap-mode)# fw check bkup
 
 
 (See ./firmware-control-files/*_cntrl.rcks)
+Use the Linux command "du -b R710_200.14.6.1.203.bl7" to get the apparent size
+of the firmware file (R710_200.14.6.1.203.bl7) in bytes (41176152 bytes). This
+number (41176152) is required in the firmware control file (r710_14_cntrl.rcks).
+The firmware update process will give an early warning about ctl/hdr file size
+mismatch. This warning would go away if we subtracted 3160 bytes from the
+apparent size, but then the next size check would fail and stop the firmware
+update process. Most likely the firmware image has a tail of 3160 bytes
+containing certificates and checksums. This tail is not accounted for by the
+first size check, but the tail is accounted for by the second size check. See
+the following examples of control files:
 
-(Use the Linux command "du -b" to get apparent size of firmware files in bytes.)
-
-(There will be an early warning about ctl/hdr file size mismatch, this warning
-is expected. This warning would go away if we subtracted 3160 bytes, but then
-the next size check would fail and stop the process. Most likely the image has a
-tail of 3160 bytes containing certificates and checksums. This tail is not
-accounted for by the first size check, but the tail is accounted for by the
-second size check.)
-(39881816-3160=39878656)
-(41184344-3160=41181184)
-(40127576-3160=40124416)
-(41626712-3160=41623552)
-
-r710_12_cntrl.rcks
+r710_12_cntrl.rcks for R710_200.12.10.105.129.bl7
 [rcks_fw.main]
 192.168.10.10
 R710_200.12.10.105.129.bl7
 39881816
 
-r710_13_cntrl.rcks
+r710_13_cntrl.rcks for R710_200.13.6.1.319.bl7
 [rcks_fw.main]
 192.168.10.10
 R710_200.13.6.1.319.bl7
 41184344
 
-r510_12_cntrl.rcks
+r710_14_cntrl.rcks for R710_200.14.6.1.203.bl7
+[rcks_fw.main]
+192.168.10.10
+R710_200.14.6.1.203.bl7
+41176152
+
+r510_12_cntrl.rcks for R510_200.12.10.105.129.bl7
 [rcks_fw.main]
 192.168.10.10
 R510_200.12.10.105.129.bl7
 40127576
 
-r510_13_cntrl.rcks
+r510_13_cntrl.rcks for R510_200.13.6.1.319.bl7
 [rcks_fw.main]
 192.168.10.10
 R510_200.13.6.1.319.bl7
 41626712
+
+r510_14_cntrl.rcks for R510_200.14.6.1.203.bl7
+[rcks_fw.main]
+192.168.10.10
+R510_200.14.6.1.203.bl7
+41421912
 
