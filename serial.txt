@@ -1,7 +1,11 @@
 serial.txt
 --------------------------------------------------------------------------------
 
-(See ../docs/ruckus_unleashed_200.13_command_line_interface_reference_guide_11-22-2022.pdf)
+(https://docs.commscope.com/bundle/unleashed-200.14-commandref/page/GUID-E170DBF9-B7D2-4C92-9DC6-3DA03F8CEBE0.html)
+When the Unleashed AP is in factory default state ...
+... default user name and password:
+ - Please login: super
+ - Password: sp-admin
 
 
 
