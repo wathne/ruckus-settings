@@ -10,40 +10,38 @@ ethernet cable. Do not use a wireless connection.
 Fedora(server, 192.168.10.10):
 ------------------------------
 
-dnf install tftp-server tftp
+user@fedora:~$ dnf install tftp-server tftp
 
-/etc/systemd/system/tftp.service.d/server.conf can be used to make changes to
-the options when calling the service.
-(OPTIONAL/PERSISTENT: mkdir /etc/systemd/system/tftp.service.d)
-(OPTIONAL/PERSISTENT: nano /etc/systemd/system/tftp.service.d/server.conf)
+(OPTIONAL/PERSISTENT: /etc/systemd/system/tftp.service.d/whatever.conf can be
+used to make changes to the options when calling the tftp service.)
 
-systemctl start tftp.socket
-systemctl status tftp.socket
-(OPTIONAL/PERSISTENT: systemctl enable tftp.socket)
+user@fedora:~$ systemctl start tftp.socket
+user@fedora:~$ systemctl status tftp.socket
+(OPTIONAL/PERSISTENT: user@fedora:~$ systemctl enable tftp.socket)
 
-firewall-cmd --add-service tftp
-firewall-cmd --list-all
-(OPTIONAL/PERSISTENT: firewall-cmd --permanent --add-service tftp)
+user@fedora:~$ firewall-cmd --add-service tftp
+user@fedora:~$ firewall-cmd --list-all
+(OPTIONAL/PERSISTENT: user@fedora:~$ firewall-cmd --permanent --add-service tftp)
 
 (See ./firmware.txt)
 (See ./firmware-control-files/*_cntrl.rcks)
-cp R710_200.13.6.1.319.bl7 /var/lib/tftpboot/
-cp r710_13_cntrl.rcks /var/lib/tftpboot/
+user@fedora:~$ cp R710_200.14.6.1.203.bl7 /var/lib/tftpboot/
+user@fedora:~$ cp r710_14_cntrl.rcks /var/lib/tftpboot/
 
-systemctl stop tftp.socket
-systemctl status tftp.socket
-(OPTIONAL/PERSISTENT: systemctl disable tftp.socket)
+user@fedora:~$ systemctl stop tftp.socket
+user@fedora:~$ systemctl status tftp.socket
+(OPTIONAL/PERSISTENT: user@fedora:~$ systemctl disable tftp.socket)
 
-firewall-cmd --remove-service tftp
-firewall-cmd --list-all
-(OPTIONAL/PERSISTENT: firewall-cmd --permanent --remove-service tftp)
+user@fedora:~$ firewall-cmd --remove-service tftp
+user@fedora:~$ firewall-cmd --list-all
+(OPTIONAL/PERSISTENT: user@fedora:~$ firewall-cmd --permanent --remove-service tftp)
 
 
 
 Arch(server, 192.168.10.10):
 ----------------------------
 
-https://wiki.archlinux.org/title/TFTP
+See https://wiki.archlinux.org/title/TFTP
 
 
 
@@ -53,8 +51,10 @@ Ruckus(client, 192.168.10.20?):
 (See ./ssh.txt)
 (See ./serial.txt)
 Login to the Ruckus CLI.
+ruckus> enable
+ruckus# set-factory
 
 (See ./firmware.txt)
 (See ./firmware-control-files/*_cntrl.rcks)
-Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
+Update both firmware slots "main"(1) and "bkup"(2) to R710_200.14.6.1.203.bl7
 
