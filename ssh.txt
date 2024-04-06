@@ -1,12 +1,9 @@
 ssh.txt
 --------------------------------------------------------------------------------
 
-(See ../docs/ruckus_unleashed_200.13_command_line_interface_reference_guide_11-22-2022.pdf)
-
-(See page 38, under Unleashed CLI Setup Wizard)
-When the Unleashed AP is in factory default state, ..., connect to the Unleashed
-CLI using SSH (default address: unleashed.ruckuswireless.com or 10.154.231.125),
-and log in using the default user name and password:
+(https://docs.commscope.com/bundle/unleashed-200.14-commandref/page/GUID-E170DBF9-B7D2-4C92-9DC6-3DA03F8CEBE0.html)
+When the Unleashed AP is in factory default state ...
+... default user name and password:
  - Please login: super
  - Password: sp-admin
 
@@ -16,19 +13,14 @@ and log in using the default user name and password:
 
 
 
-nano ~/.ssh/config
-------------------
+user@fedora:~$ nano ~/.ssh/config
+---------------------------------
 Host 192.168.10.20
-    PubkeyAcceptedAlgorithms +ssh-rsa
-    HostkeyAlgorithms +ssh-rsa
-
-Host 192.168.10.21
     PubkeyAcceptedAlgorithms +ssh-rsa
     HostkeyAlgorithms +ssh-rsa
 
 Host 192.168.10.20?
     PubkeyAcceptedAlgorithms +ssh-rsa
     HostkeyAlgorithms +ssh-rsa
-
-------------------
+---------------------------------
 
