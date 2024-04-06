@@ -8,6 +8,14 @@ See https://github.com/ms264556/Hackery/blob/c0de444ea39d38b1e3dde20f323ca3ca0dc
 
 See ./unleashed.root.patch.dbg
 
+Admin & Services -> Administration -> Upgrade:
+set Local Upgrade
+set Preload Image to unleashed.root.patch.dbg
+(The upload process itself will apply the patch. No upgrade will be offered.)
+Wait 10 seconds and refresh the page.
+
+
+
 I made the patch myself after inspecting the bash and python code.
 The checksum of my patch and the precompiled(ms264556) patch did not match.
 The most likely reason for this checksum mismatch is that tar preserves the

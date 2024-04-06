@@ -36,20 +36,39 @@ Login to the Ruckus CLI.
 ruckus> enable
 ruckus# set-factory
 
-(See ./tftp-server.txt)
 (See ./firmware.txt)
 (See ./firmware-control-files/*_cntrl.rcks)
-Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
+(See ./tftp-server.txt)
+Setup a tftp server and prepare the firmware and a firmware control file.
+Downgrade to R710_200.13.6.1.319.bl7 or any version from before 30 August 2023.
+Reboot.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
 Complete the initial setup, WLAN: {name}-5GHz
 
 (See ./patches/root.patch.txt)
-(See ./patches/unlock.patch.txt)
 (See ./root.txt)
-Patch.
+Admin & Services -> Administration -> Upgrade:
+set Local Upgrade
+set Preload Image to unleashed.root.patch.dbg
+(The upload process itself will apply the patch. No upgrade will be offered.)
+Wait 10 seconds and refresh the page.
+
+(See ./patches/unlock.patch.txt)
+Admin & Services -> Administration -> Upgrade:
+set Local Upgrade
+set Preload Image to unleashed.unlock.dbg
+(The upload process itself will apply the patch. No upgrade will be offered.)
+Wait 10 seconds and refresh the page.
+
+(See ./firmware.txt)
+(See ./firmware-control-files/*_cntrl.rcks)
+(See ./tftp-server.txt)
+Setup a tftp server and prepare the firmware and a firmware control file.
+Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
 Reboot.
-Factory reset.
+
+Factory reset and reboot.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
 Complete the initial setup, WLAN: {name}-5GHz
