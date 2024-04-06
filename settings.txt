@@ -252,7 +252,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
 (OPTIONAL) set Device Name
 (OPTIONAL) set Description
 (OPTIONAL) set Location
-(OPTIONAL) set GPS Coordinates(Latitude,Longitude)
+(OPTIONAL) set GPS Coordinates
 
 (See ./lovdata.txt)
 (Assuming 100 mW E.I.R.P. (20 dBm) at 2.4 GHz band, channels 1,6,11.)
@@ -269,7 +269,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 Ghz:
 (Override Group Config) set Channel to 36/44
 (Override Group Config) set TX Power to Full (Only for uncongested areas.)
 
-(See ./cli-config-wlan.txt)
+See ./cli-config-wlan.txt
 ofdm-only
 bss-minrate 12
 80211w-pmf 2 (80211w-pmf 1)
