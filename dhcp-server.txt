@@ -4,30 +4,25 @@ dhcp-server.txt
 Fedora(server, 192.168.10.10):
 ------------------------------
 
+user@fedora:~$ dnf install dhcp-server
+
 Set static ip address to 192.168.10.10
 Set static subnet mask to 255.255.255.0
 
-dnf install dhcp-server
-
-nano /etc/dhcp/dhcpd.conf
--------------------------
-#
-# DHCP Server Configuration file.
-#   see /usr/share/doc/dhcp-server/dhcpd.conf.example
-#   see dhcpd.conf(5) man page
-#
-
+user@fedora:~$ nano /etc/dhcp/dhcpd.conf
+----------------------------------------
 subnet 192.168.10.0 netmask 255.255.255.0 {
   range 192.168.10.200 192.168.10.209;
 }
+----------------------------------------
 
--------------------------
+user@fedora:~$ systemctl start dhcpd
+user@fedora:~$ systemctl status dhcpd
+(OPTIONAL/PERSISTENT: user@fedora:~$ systemctl enable dhcpd)
 
-systemctl start dhcpd
-systemctl status dhcpd
-(OPTIONAL/PERSISTENT: systemctl enable dhcpd)
+user@fedora:~$ systemctl stop dhcpd
+user@fedora:~$ systemctl status dhcpd
+(OPTIONAL/PERSISTENT: user@fedora:~$ systemctl disable dhcpd)
 
-systemctl stop dhcpd
-systemctl status dhcpd
-(OPTIONAL/PERSISTENT: systemctl disable dhcpd)
+Connect directly to the AP/switch/injector with an ethernet cable.
 
