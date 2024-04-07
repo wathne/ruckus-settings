@@ -11,27 +11,17 @@ ruckus> enable
 ruckus# config
 
 ruckus(config)# wlan "{name}-5GHz"
-ruckus(config-wlan)# ofdm-only
-ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 2
 ruckus(config-wlan)# end
 
 ruckus(config)# wlan "{name}-2.4GHz-IoT"
-ruckus(config-wlan)# ofdm-only
-ruckus(config-wlan)# bss-minrate 12
-ruckus(config-wlan)# 80211w-pmf 1
 ruckus(config-wlan)# end
 
 ruckus(config)# wlan "{name}-5GHz-guest"
-ruckus(config-wlan)# ofdm-only
-ruckus(config-wlan)# bss-minrate 12
 ruckus(config-wlan)# 80211w-pmf 2
 ruckus(config-wlan)# end
 
 ruckus(config)# wlan "{name}-2.4GHz-guest"
-ruckus(config-wlan)# ofdm-only
-ruckus(config-wlan)# bss-minrate 12
-ruckus(config-wlan)# 80211w-pmf 1
 ruckus(config-wlan)# end
 
 ruckus(config)# end
@@ -40,16 +30,8 @@ ruckus# reboot
 
 
 --------------------------------------------------------------------------------
-ofdm-only            Enables the mode to support OFDM rate only.
-bss-minrate <NUMBER> Sets the minimum transmission rate of the WLAN in the BSS 
-                     to [1 | 2 | 5.5 | 12 | 24] (Mbps).(It may change the
-                     current value of mgmt-tx-rate and ofdm-only according to
-                     the selected value.)
 80211w-pmf <NUMBER>  Sets 802.11w PMF 0:Disable,1:Optional,2:Required.
 --------------------------------------------------------------------------------
-no ofdm-only         Disables the mode to supoort OFDM rate only.
-no bss-minrate       Disables the minimum transmission rate of the WLAN in the
-                     BSS.
 no 80211w-pmf        Disables 802.11w PMF.
 --------------------------------------------------------------------------------
 

@@ -65,7 +65,7 @@ Wait 10 seconds and refresh the page.
 (See ./firmware-control-files/*_cntrl.rcks)
 (See ./tftp-server.txt)
 Setup a tftp server and prepare the firmware and a firmware control file.
-Update both firmware slots "main"(1) and "bkup"(2) to R710_200.13.6.1.319.bl7
+Update both firmware slots "main"(1) and "bkup"(2) to R710_200.14.6.1.203.bl7
 Reboot.
 
 Factory reset and reboot.
@@ -81,12 +81,12 @@ Admin & Services -> System -> System Info:
 set Name to {name}-Ruckus-Unleashed
 set Primary Preferred Master
 disable Switch Approval
-(OPTIONAL) Enable Email Server
+(OPTIONAL) enable Email Server
 (OPTIONAL) fill in the required email fields
 
 Admin & Services -> System -> IP Settings -> Management Interface:
 (For Altibox router/gateway as 192.168.10.1)
-Enable IPv4 Management Interface
+enable IPv4 Management Interface
 set IP Address to 192.168.10.20
 set Netmask to 255.255.255.0
 
@@ -112,12 +112,8 @@ set 2.4GHz to disabled
 set 5GHz to disabled
 
 Admin & Services -> Services -> Radio Control -> Background Scanning:
-set 2.4GHz to 300 seconds
-set 5GHz to 300 seconds
-(click Apply)
 set 2.4GHz to disabled
 set 5GHz to disabled
-(click Apply)
 
 Admin & Services -> Services -> Radio Control -> Radar Avoidance Pre-Scanning:
 disable Radar Avoidance Pre-Scanning (We will not use any DFS channels.)
@@ -156,6 +152,8 @@ SSID setup:
 WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
+enable OFDM Only
+set BSS Min Rate to 12.00mbps
 
 WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
@@ -170,6 +168,8 @@ set Password (Use a different password than for {name}-5GHz)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
+enable OFDM Only
+set BSS Min Rate to 12.00mbps
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
@@ -195,6 +195,8 @@ set Rules to:
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
+enable OFDM Only
+set BSS Min Rate to 12.00mbps
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
@@ -226,6 +228,8 @@ set Rules to:
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
+enable OFDM Only
+set BSS Min Rate to 12.00mbps
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
@@ -270,9 +274,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 Ghz:
 (Override Group Config) set TX Power to Full (Only for uncongested areas.)
 
 See ./cli-config-wlan.txt
-ofdm-only
-bss-minrate 12
-80211w-pmf 2 (80211w-pmf 1)
+80211w-pmf 2
 
 --------------------------------------------------------------------------------
 When finished, remember to:
