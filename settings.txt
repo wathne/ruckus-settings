@@ -265,13 +265,13 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
 
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 Ghz:
 (Override Group Config) set Channelization to 20
-(Override Group Config) set Channel to 1/6/11
-(Override Group Config) set TX Power to Full (Only for uncongested areas.)
+(Override Group Config) set Channel to 1/6/11 (Interference? Utilizaton?)
+(Override Group Config) set TX Power to Full
 
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 Ghz:
-(Override Group Config) set Channelization to 40 (Only for solo AP or max 2 AP.)
-(Override Group Config) set Channel to 36/44
-(Override Group Config) set TX Power to Full (Only for uncongested areas.)
+(Override Group Config) set Channelization to 20/Auto
+(Override Group Config) set Channel to 36/40/44/48 (Interference? Utilizaton?)
+(Override Group Config) set TX Power to Full
 
 See ./cli-config-wlan.txt
 80211w-pmf 2
