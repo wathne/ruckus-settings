@@ -263,12 +263,12 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
 (Assuming 200 mW E.I.R.P. (23 dBm) at 5 GHz band, channels 36,40,44,48.)
 (Antenna Gain (max) for R510, R610 and R710 is up to 3dBi.)
 
-Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 Ghz:
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 GHz:
 (Override Group Config) set Channelization to 20
 (Override Group Config) set Channel to 1/6/11 (Interference? Utilizaton?)
 (Override Group Config) set TX Power to Full
 
-Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 Ghz:
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
 (Override Group Config) set Channelization to 20/Auto
 (Override Group Config) set Channel to 36/40/44/48 (Interference? Utilizaton?)
 (Override Group Config) set TX Power to Full
