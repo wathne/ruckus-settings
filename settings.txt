@@ -1,22 +1,6 @@
 settings.txt
 --------------------------------------------------------------------------------
 
-./cli-config-wlan.txt
-./dhcp-server.txt
-./firmware.txt
-./firmware-control-files/*_cntrl.rcks
-./lovdata.txt
-./patches/root.patch.txt (./patches/unleashed.root.patch.dbg)
-./patches/unlock.patch.txt (./patches/unleashed.unlock.dbg)
-./power-mode.txt
-./root.txt
-./serial.txt
-./settings.txt <- YOU ARE HERE
-./ssh.txt
-./tftp-server.txt
-
-
-
 (See https://support.ruckuswireless.com/articles/000012418)
 If a factory reset is necessary, press the reset button for more than 8 seconds.
 
