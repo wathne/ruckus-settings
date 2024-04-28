@@ -15,12 +15,7 @@ settings.txt
 ./ssh.txt
 ./tftp-server.txt
 
---------------------------------------------------------------------------------
-When finished, remember to:
-STOP DHCP SERVICE (See ./dhcp-server.txt)
-STOP TFTP SERVICE (See ./tftp-server.txt)
-REMOVE TFTP SERVICE FROM FIREWALL (See ./tftp-server.txt)
---------------------------------------------------------------------------------
+
 
 (See https://support.ruckuswireless.com/articles/000012418)
 If a factory reset is necessary, press the reset button for more than 8 seconds.
@@ -275,11 +270,4 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
 
 See ./cli-config-wlan.txt
 80211w-pmf 2
-
---------------------------------------------------------------------------------
-When finished, remember to:
-STOP DHCP SERVICE (See ./dhcp-server.txt)
-STOP TFTP SERVICE (See ./tftp-server.txt)
-REMOVE TFTP SERVICE FROM FIREWALL (See ./tftp-server.txt)
---------------------------------------------------------------------------------
 
