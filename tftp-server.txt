@@ -38,13 +38,6 @@ user@fedora:~$ firewall-cmd --list-all
 
 
 
-Arch(server, 192.168.10.10):
-----------------------------
-
-See https://wiki.archlinux.org/title/TFTP
-
-
-
 Ruckus(client, 192.168.10.20?):
 -------------------------------
 
