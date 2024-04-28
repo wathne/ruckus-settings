@@ -260,5 +260,9 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
 (Override Group Config) set TX Power to Full
 
 See ./cli-config-wlan.txt
-80211w-pmf 2
+For 5GHz WLAN, set Protected Management Frames to Required
+
+Reboot.
+
+Connect the master AP to the main network and reboot.
 
