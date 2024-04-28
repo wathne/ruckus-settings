@@ -56,7 +56,6 @@ Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
 Complete the Quick Install, set Wireless LAN Name (ESSID) to {name}-5GHz
 (click Finish)
 
-(See ./power-mode.txt)
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
 (Override Group Config) set PoE Operating Mode to 802.3at PoE
 
