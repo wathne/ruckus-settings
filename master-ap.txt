@@ -266,3 +266,5 @@ Reboot.
 
 Connect the master AP to the main network and reboot.
 
+See ./member-ap.txt
+

@@ -1,0 +1,68 @@
+member-ap.txt
+--------------------------------------------------------------------------------
+
+See the first part of ./master-ap.txt
+Apply the root patch.
+Apply the unlock patch.
+Update both firmware slots "main"(1) and "bkup"(2) to R710_200.14.6.1.203.bl7
+Reboot.
+
+Factory reset and reboot.
+
+Connect the member AP to the main network.
+
+Go to https://192.168.10.20 (The IPv4 management interface.)
+
+Access Points -> AP View:
+Wait for the member AP.
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
+(Override Group Config) set PoE Operating Mode to 802.3at PoE
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Network:
+(For Altibox router/gateway as 192.168.10.1)
+set Manual
+set IP Address to 192.168.10.22 (Master AP is 21, first member AP is 22, etc.)
+set Netmask to 255.255.255.0
+set Gateway to 192.168.10.1
+set Primary DNS Server to 192.168.10.1
+set Secondary DNS Server to 1.1.1.1
+(click OK)
+
+Access Points -> AP View:
+Wait for the member AP.
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Network:
+set DHCP
+(click OK)
+
+Access Points -> AP View:
+Wait for the member AP.
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
+(OPTIONAL) set Device Name
+(OPTIONAL) set Description
+(OPTIONAL) set Location
+(OPTIONAL) set GPS Coordinates
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 GHz:
+(Override Group Config) set Channelization to 20
+(Override Group Config) set Channel to 1/6/11 (Interference? Utilizaton?)
+(Override Group Config) set TX Power to Full
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 GHz:
+(OPTIONAL) (Override Group Config) disable WLAN Service
+
+Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
+(Override Group Config) set Channelization to 20/Auto
+(Override Group Config) set Channel to 36/40/44/48 (Interference? Utilizaton?)
+(Override Group Config) set TX Power to Full
+
+WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
+(OPTIONAL) set BSS Min Rate to 24.00mbps
+
+WiFi Networks -> {name}-5GHz-guest -> Edit WLAN -> Show Advanced Options -> Radio Control:
+(OPTIONAL) set BSS Min Rate to 24.00mbps
+
+Reboot.
+
