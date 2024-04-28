@@ -1,4 +1,4 @@
-settings.txt
+master-ap.txt
 --------------------------------------------------------------------------------
 
 (See https://support.ruckuswireless.com/articles/000012418)
