@@ -58,11 +58,5 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
 (Override Group Config) set Channel to 36/40/44/48 (Interference? Utilizaton?)
 (Override Group Config) set TX Power to Full
 
-WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
-(OPTIONAL) set BSS Min Rate to 24.00mbps
-
-WiFi Networks -> {name}-5GHz-guest -> Edit WLAN -> Show Advanced Options -> Radio Control:
-(OPTIONAL) set BSS Min Rate to 24.00mbps
-
 Reboot.
 
