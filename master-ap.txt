@@ -73,7 +73,7 @@ set IP Address to 192.168.10.20
 set Netmask to 255.255.255.0
 (click Apply)
 
-Go to https://192.168.10.20
+Go to https://192.168.10.20 (The IPv4 management interface.)
 
 Admin & Services -> System -> IP Settings -> IP Settings:
 (For Altibox router/gateway as 192.168.10.1)
