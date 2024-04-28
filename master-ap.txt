@@ -1,12 +1,14 @@
 master-ap.txt
 --------------------------------------------------------------------------------
 
-(See https://support.ruckuswireless.com/articles/000012418)
-If a factory reset is necessary, press the reset button for more than 8 seconds.
+Complete this guide before connecting the master AP to the main network.
 
 (See ./dhcp-server.txt)
 Setup a dhcp server and connect directly to the AP/switch/injector with an
 ethernet cable. Do not use a wireless connection.
+
+(See https://support.ruckuswireless.com/articles/000012418)
+If a factory reset is necessary, press the reset button for more than 8 seconds.
 
 (Find the ip address with nmap 192.168.10.0/24)
 (See ./ssh.txt)
@@ -23,7 +25,8 @@ Downgrade to R710_200.13.6.1.319.bl7 or any version from before 30 August 2023.
 Reboot.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
-Complete the initial setup, WLAN: {name}-5GHz
+Complete the Quick Install, set Wireless LAN Name (ESSID) to {name}-5GHz
+(click Finish)
 
 (See ./patches/root.patch.txt)
 (See ./root.txt)
@@ -50,7 +53,8 @@ Reboot.
 Factory reset and reboot.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
-Complete the initial setup, WLAN: {name}-5GHz
+Complete the Quick Install, set Wireless LAN Name (ESSID) to {name}-5GHz
+(click Finish)
 
 (See ./power-mode.txt)
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
@@ -68,6 +72,7 @@ Admin & Services -> System -> IP Settings -> Management Interface:
 enable IPv4 Management Interface
 set IP Address to 192.168.10.20
 set Netmask to 255.255.255.0
+(click Apply)
 
 Go to https://192.168.10.20
 
@@ -116,7 +121,9 @@ Admin & Services -> Administration -> Network Management -> Alarm Notification:
 
 Admin & Services -> Administration -> Mobile App -> Remote Management & Mobile App Notification:
 disable Mobile App Notification
+(click Apply)
 disable Mobile App Remote Management
+(click Apply)
 
 
 SSID setup:
@@ -193,7 +200,7 @@ set Authentication Method to Open
 set Encryption Method to WPA2
 set Password (Use the same password as for {name}-5GHz-guest)
 -> Show Advanced Options -> Access Control:
-create new Layer3/4 ACL:
+set Layer3/4 ACL to existing guest-acl or create new Layer3/4 ACL:
 set Name to guest-acl
 set Default Mode to Allow all by default
 set Rules to:
@@ -213,7 +220,7 @@ set BSS Min Rate to 12.00mbps
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
-create new allowlist:
+set allowlist to existing guest-allowlist or create new allowlist:
 set Name to guest-allowlist
 enable Auto Allowlist
 (click OK)
@@ -227,6 +234,7 @@ Access Points -> Group View -> System Default -> Edit AP Group -> Radio (5G):
 set Channelization to 20
 set Radio 5.0 GHz Indoor to channel 36,40,44,48
 set Radio 5.0 GHz Outdoor to channel 36,40,44,48
+(click OK)
 
 Access Points -> Group View -> System Default -> Edit AP Group -> Radio (5G):
 set Channelization to Auto
@@ -237,7 +245,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
 (OPTIONAL) set Location
 (OPTIONAL) set GPS Coordinates
 
-(See ./lovdata.txt)
+(OPTIONAL) (See ./lovdata.txt)
 (Assuming 100 mW E.I.R.P. (20 dBm) at 2.4 GHz band, channels 1,6,11.)
 (Assuming 200 mW E.I.R.P. (23 dBm) at 5 GHz band, channels 36,40,44,48.)
 (Antenna Gain (max) for R510, R610 and R710 is up to 3dBi.)
