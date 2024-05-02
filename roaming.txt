@@ -1,0 +1,58 @@
+roaming.txt
+--------------------------------------------------------------------------------
+
+IEEE 802.11r, 802.11k and 802.11v are known as the most relevant IEEE 802.11
+amendments for roaming. We will use 802.11k and 802.11v, but not 802.11r.
+
+802.11r BSS Fast Transition (FT) and 802.11w Protected Management Frames (PMF)
+are known to be incompatible. Additionally, a normal WPA2-Personal handshake
+takes about 50ms to complete, which is good enough. 802.11r FT is mainly
+beneficial when WPA2-Enterprise authentication is used instead of WPA2-Personal.
+
+802.11v BSS Transition Management (BTM) is enabled by default on Ruckus
+Unleashed. They named it Ruckus SmartRoam+, which is confusingly similar to
+Ruckus SmartRoam. An 802.11v BTM Request frame is more gentle than an 802.11
+Disassociation frame sent by Ruckus SmartRoam. Ruckus SmartRoam is disabled by
+default.
+
+
+
+Go to https://192.168.10.20 (The IPv4 management interface.)
+
+Admin & Services -> Services -> Radio Control -> Background Scanning:
+set 5GHz to enabled
+
+WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
+enable Background Scanning
+enable 802.11k Neighbor-list Report
+
+WiFi Networks -> {name}-5GHz-guest -> Edit WLAN -> Show Advanced Options -> Radio Control:
+enable Background Scanning
+enable 802.11k Neighbor-list Report
+
+Beware that the previous CLI config-wlan settings are automatically wiped after
+changing the WLAN settings above. Therefore, the CLI config-wlan settings have
+to be set again.
+See ./cli-config-wlan.txt
+For 5GHz WLAN, set Protected Management Frames to Required
+
+
+
+(See ./ssh.txt)
+(See ./serial.txt)
+Login to the Ruckus CLI.
+ruckus> en
+ruckus# ap-mode
+
+Check that 802.11v BTM is enabled:
+ruckus(ap-mode)# get bss-trans-mgmt wlan32
+ruckus(ap-mode)# get bss-trans-mgmt wlan33
+
+Check that clients support 802.11v BTM:
+ruckus(ap-mode)# get station wlan32 info
+ruckus(ap-mode)# get station wlan33 info
+
+Check that Ruckus SmartRoam is disabled:
+ruckus(ap-mode)# get roam_enable wlan32
+ruckus(ap-mode)# get roam_enable wlan33
+

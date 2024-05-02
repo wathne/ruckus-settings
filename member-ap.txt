@@ -60,3 +60,5 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
 
 Reboot.
 
+(OPTIONAL) See ./roaming.txt
+
