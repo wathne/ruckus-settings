@@ -244,7 +244,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
 (OPTIONAL) set Location
 (OPTIONAL) set GPS Coordinates
 
-(OPTIONAL) (See ./lovdata.txt)
+(OPTIONAL) (See ./norway-lovdata.txt)
 (100 mW (20 dBm) EIRP limit at 2.4 GHz band, channels 1, 6 and 11.)
 (200 mW (23 dBm) EIRP limit at 5 GHz band, channels 36, 40, 44, and 48.)
 (OPTIONAL) (See Ruckus R510, R610 and R710 specifications.)
