@@ -1,26 +1,26 @@
 lovdata.txt
 --------------------------------------------------------------------------------
 
-LOVDATA: https://lovdata.no/forskrift/2012-01-19-77/§11
+See https://lovdata.no/forskrift/2012-01-19-77/§11
 
-LOVDATA: TX Power:
-	2400–2484 MHz:  100 mW e.i.r.p.
-	5150–5250 MHz:  200 mW e.i.r.p. [Indoors]
-DFS	5250–5350 MHz:  100 mW e.i.r.p.(average /w TPC, or max /wo TPC),  200 mW e.i.r.p.(max /w TPC)
-DFS	5470–5725 MHz:  500 mW e.i.r.p.(average /w TPC, or max /wo TPC), 1000 mW e.i.r.p.(max /w TPC)
-DFS	5725–5795 MHz: 2000 mW e.i.r.p.(average /w TPC, or max /wo TPC), 4000 mW e.i.r.p.(max /w TPC)
-DFS	5815–5850 MHz: 2000 mW e.i.r.p.(average /w TPC, or max /wo TPC), 4000 mW e.i.r.p.(max /w TPC)
+Norway Lovdata, Effective Isotropic Radiated Power (EIRP):
+	2400–2483 MHz:  100 mW EIRP
+	5150–5250 MHz:  200 mW EIRP [Indoors]
+DFS	5250–5350 MHz:  100 mW EIRP(average /w TPC, or max /wo TPC),  200 mW EIRP(max /w TPC)
+DFS	5470–5725 MHz:  500 mW EIRP(average /w TPC, or max /wo TPC), 1000 mW EIRP(max /w TPC)
+DFS	5725–5795 MHz: 2000 mW EIRP(average /w TPC, or max /wo TPC), 4000 mW EIRP(max /w TPC)
+DFS	5815–5850 MHz: 2000 mW EIRP(average /w TPC, or max /wo TPC), 4000 mW EIRP(max /w TPC)
 
-LOVDATA: 20 MHz Channelization:
-	2400–2484 MHz: 1,2,3,4,5,6,7,8,9,10,11,12,13
+Norway Lovdata, 20 MHz Channelization:
+	2400–2483 MHz: 1,2,3,4,5,6,7,8,9,10,11,12,13
 	5150–5250 MHz: (32),36,40,44,48 [Indoors]
 DFS	5250–5350 MHz: 52,56,60,64,(68)
 DFS	5470–5725 MHz: (96),100,104,108,112,116,120,124,128,132,136,140,(144)
 DFS	5725–5795 MHz: (144),149,153,157
 DFS	5815–5850 MHz: 165
 
-Available 20 MHz Channelization in Ruckus Unleashed (Norway):
-	2400–2484 MHz: 1,2,3,4,5,6,7,8,9,10,11,12,13
+Ruckus Unleashed (Norway), 20 MHz Channelization:
+	2400–2483 MHz: 1,2,3,4,5,6,7,8,9,10,11,12,13
 	5150–5250 MHz: 36,40,44,48 [Indoors]
 DFS	5250–5350 MHz: 52,56,60,64
 DFS	5470–5725 MHz: 100,104,108,112,116,120,124,128,132,136,140

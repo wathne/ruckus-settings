@@ -245,9 +245,13 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> General:
 (OPTIONAL) set GPS Coordinates
 
 (OPTIONAL) (See ./lovdata.txt)
-(Assuming 100 mW E.I.R.P. (20 dBm) at 2.4 GHz band, channels 1,6,11.)
-(Assuming 200 mW E.I.R.P. (23 dBm) at 5 GHz band, channels 36,40,44,48.)
-(Antenna Gain (max) for R510, R610 and R710 is up to 3dBi.)
+(100 mW (20 dBm) EIRP limit at 2.4 GHz band, channels 1, 6 and 11.)
+(200 mW (23 dBm) EIRP limit at 5 GHz band, channels 36, 40, 44, and 48.)
+(OPTIONAL) (See Ruckus R510, R610 and R710 specifications.)
+(Up to 3 dBi antenna gain on R510, R610 and R710.)
+(Up to 6 dBi Ruckus BeamFlex gain on R510, R610 and R710.)
+(OPTIONAL) (See ./root.txt)
+(Use iwconfig as root to see Tx-Power in dBm. No cable loss or antenna gain.)
 
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 2.4 GHz:
 (Override Group Config) set Channelization to 20
