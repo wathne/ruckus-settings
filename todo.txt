@@ -1,0 +1,28 @@
+todo.txt
+--------------------------------------------------------------------------------
+
+My todo list.
+
+
+
+TODO: It is not necessary to disable Radar Avoidance Pre-Scanning.
+(See https://docs.commscope.com/bundle/unleashed-200.14-onlinehelp/page/GUID-6AD62490-753F-4847-8E94-248167F58383.html)
+
+
+
+TODO: Create guest-acl and guest-allowlist before WLAN setup.
+--------------------------------------------------------------------------------
+Admin & Services -> Services -> Access Control -> L3/4/IP address Access Control:
+TODO: guest-acl
+Admin & Services -> Services -> Access Control -> Client Isolation Allow List:
+TODO: guest-allowlist
+WiFi Networks -> {name}-5GHz-guest -> Edit WLAN -> Show Advanced Options -> Access Control:
+set Layer3/4 ACL to guest-acl
+WiFi Networks -> {name}-2.4GHz-guest -> Edit WLAN -> Show Advanced Options -> Access Control:
+set Layer3/4 ACL to guest-acl
+WiFi Networks -> {name}-5GHz-guest -> Edit WLAN -> Show Advanced Options -> Others:
+set allowlist to guest-allowlist
+WiFi Networks -> {name}-2.4GHz-guest -> Edit WLAN -> Show Advanced Options -> Others:
+set allowlist to guest-allowlist
+--------------------------------------------------------------------------------
+
