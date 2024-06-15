@@ -137,7 +137,7 @@ WiFi Networks -> {Name} -> Edit WLAN -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
 enable OFDM Only
-set BSS Min Rate to 12.00mbps
+set BSS Min Rate to Default
 
 WiFi Networks -> {Name} -> Edit WLAN -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
@@ -153,7 +153,7 @@ set Password (Use a different password than for the 5 GHz {Name} WLAN)
 disable Background Scanning
 enable WLAN on 2.4 GHz only
 enable OFDM Only
-set BSS Min Rate to 12.00mbps
+set BSS Min Rate to Default
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
@@ -180,7 +180,7 @@ set Rules to:
 disable Background Scanning
 enable WLAN on 5 GHz only
 enable OFDM Only
-set BSS Min Rate to 12.00mbps
+set BSS Min Rate to Default
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
@@ -213,7 +213,7 @@ set Rules to:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
 enable OFDM Only
-set BSS Min Rate to 12.00mbps
+set BSS Min Rate to Default
 -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
