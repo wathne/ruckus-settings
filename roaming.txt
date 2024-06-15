@@ -22,11 +22,11 @@ Go to https://192.168.10.20 (The IPv4 management interface.)
 Admin & Services -> Services -> Radio Control -> Background Scanning:
 set 5GHz to enabled
 
-WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
+WiFi Networks -> {Name} -> Edit WLAN -> Show Advanced Options -> Radio Control:
 enable Background Scanning
 enable 802.11k Neighbor-list Report
 
-WiFi Networks -> {name}-5GHz-guest -> Edit WLAN -> Show Advanced Options -> Radio Control:
+WiFi Networks -> {Name}-guest -> Edit WLAN -> Show Advanced Options -> Radio Control:
 enable Background Scanning
 enable 802.11k Neighbor-list Report
 
@@ -34,7 +34,7 @@ Beware that the previous CLI config-wlan settings are automatically wiped after
 changing the WLAN settings above. Therefore, the CLI config-wlan settings have
 to be set again.
 See ./cli-config-wlan.txt
-For 5GHz WLAN, set Protected Management Frames to Required
+For 5 GHz WLAN, set Protected Management Frames to Required
 
 
 

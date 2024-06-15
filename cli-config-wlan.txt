@@ -10,18 +10,18 @@ Login to the Ruckus CLI.
 ruckus> enable
 ruckus# config
 
-ruckus(config)# wlan "{name}-5GHz"
+ruckus(config)# wlan "{Name}"
 ruckus(config-wlan)# 80211w-pmf 2
 ruckus(config-wlan)# end
 
-ruckus(config)# wlan "{name}-2.4GHz-IoT"
+ruckus(config)# wlan "{Name}-2.4GHz-IoT"
 ruckus(config-wlan)# end
 
-ruckus(config)# wlan "{name}-5GHz-guest"
+ruckus(config)# wlan "{Name}-guest"
 ruckus(config-wlan)# 80211w-pmf 2
 ruckus(config-wlan)# end
 
-ruckus(config)# wlan "{name}-2.4GHz-guest"
+ruckus(config)# wlan "{Name}-2.4GHz-guest"
 ruckus(config-wlan)# end
 
 ruckus(config)# end

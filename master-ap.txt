@@ -25,7 +25,7 @@ Downgrade to R710_200.13.6.1.319.bl7 or any version from before 30 August 2023.
 Reboot.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
-Complete the Quick Install, set Wireless LAN Name (ESSID) to {name}-5GHz
+Complete the Quick Install, set Wireless LAN Name (ESSID) to {Name}
 (click Finish)
 
 (See ./patches/root.patch.txt)
@@ -53,14 +53,14 @@ Reboot.
 Factory reset and reboot.
 
 Go to https://192.168.10.201 (Find the ip address with nmap 192.168.10.0/24)
-Complete the Quick Install, set Wireless LAN Name (ESSID) to {name}-5GHz
+Complete the Quick Install, set Wireless LAN Name (ESSID) to {Name}
 (click Finish)
 
 Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Other:
 (Override Group Config) set PoE Operating Mode to 802.3at PoE
 
 Admin & Services -> System -> System Info:
-set Name to {name}-Ruckus-Unleashed
+set Name to {Name}-Ruckus-Unleashed
 set Primary Preferred Master
 disable Switch Approval
 (OPTIONAL) enable Email Server
@@ -125,31 +125,31 @@ disable Mobile App Remote Management
 (click Apply)
 
 
-SSID setup:
+WLAN ESSID overview:
 ----------------------
-{name}-5GHz
-{name}-2.4GHz-IoT
-{name}-5GHz-guest
-{name}-2.4GHz-guest
+{Name}
+{Name}-2.4GHz-IoT
+{Name}-guest
+{Name}-2.4GHz-guest
 ----------------------
 
 
-WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Radio Control:
+WiFi Networks -> {Name} -> Edit WLAN -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
 enable OFDM Only
 set BSS Min Rate to 12.00mbps
 
-WiFi Networks -> {name}-5GHz -> Edit WLAN -> Show Advanced Options -> Others:
+WiFi Networks -> {Name} -> Edit WLAN -> Show Advanced Options -> Others:
 set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
 
 WiFi Networks -> Create WLAN:
-set Name to {name}-2.4GHz-IoT
+set Name to {Name}-2.4GHz-IoT
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use a different password than for {name}-5GHz)
+set Password (Use a different password than for the 5 GHz {Name} WLAN)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
@@ -160,11 +160,11 @@ set Inactivity Timeout to 500
 set Directed MC/BC Threshold to 0
 
 WiFi Networks -> Create WLAN:
-set Name to {name}-5GHz-guest
+set Name to {Name}-guest
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use the same password as for {name}-2.4GHz-guest)
+set Password (Use the same password as for the {Name}-2.4GHz-guest WLAN)
 -> Show Advanced Options -> Access Control:
 create new Layer3/4 ACL:
 set Name to guest-acl
@@ -193,11 +193,11 @@ enable Auto Allowlist
 set Directed MC/BC Threshold to 0
 
 WiFi Networks -> Create WLAN:
-set Name to {name}-2.4GHz-guest
+set Name to {Name}-2.4GHz-guest
 set Usage Type to Standard
 set Authentication Method to Open
 set Encryption Method to WPA2
-set Password (Use the same password as for {name}-5GHz-guest)
+set Password (Use the same password as for the 5 GHz {Name}-guest WLAN)
 -> Show Advanced Options -> Access Control:
 set Layer3/4 ACL to existing guest-acl or create new Layer3/4 ACL:
 set Name to guest-acl
@@ -264,7 +264,7 @@ Access Points -> AP View -> RuckusAP[...*] -> Edit AP -> Radio 5 GHz:
 (Override Group Config) set TX Power to Full
 
 See ./cli-config-wlan.txt
-For 5GHz WLAN, set Protected Management Frames to Required
+For 5 GHz WLAN, set Protected Management Frames to Required
 
 Reboot.
 
