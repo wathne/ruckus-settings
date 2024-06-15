@@ -97,9 +97,6 @@ Admin & Services -> Services -> Radio Control -> Background Scanning:
 set 2.4GHz to disabled
 set 5GHz to disabled
 
-Admin & Services -> Services -> Radio Control -> Radar Avoidance Pre-Scanning:
-disable Radar Avoidance Pre-Scanning (We will not use any DFS channels.)
-
 Admin & Services -> Administration -> Diagnostics -> Events:
 set Event Log Level to Critical & Warning
 
