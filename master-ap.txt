@@ -89,6 +89,25 @@ set DHCP
 Admin & Services -> System -> System Time:
 set time zone to (GMT +1:00) Brussels, Copenhagen, Madrid, Paris
 
+Admin & Services -> Services -> Access Control -> L3/4/IP address Access Control:
+create new Layer3/4 ACL:
+set Name to guest-acl
+set Default Mode to Allow all by default
+set Rules to:
+| Order | Description  | Type  | Src | Destination Addr.  | Advanced Options   |
+|-------|--------------|-------|-----|--------------------|--------------------|
+| 1     | gateway      | Allow | Any | 192.168.10.1/32    | Any, Any, Any, Any |
+| 2     |              | Deny  | Any | 192.168.0.0/16     | Any, Any, Any, Any |
+| 3     |              | Deny  | Any | 10.0.0.0/8         | Any, Any, Any, Any |
+| 4     |              | Deny  | Any | 172.16.0.0/12      | Any, Any, Any, Any |
+(click OK)
+
+Admin & Services -> Services -> Access Control -> Client Isolation Allow List:
+create new allowlist:
+set Name to guest-allowlist
+enable Auto Allowlist
+(click OK)
+
 Admin & Services -> Services -> Radio Control -> Self Healing:
 set 2.4GHz to disabled
 set 5GHz to disabled
@@ -162,17 +181,7 @@ set Authentication Method to Open
 set Encryption Method to WPA2
 set Password (Use the same password as for the {Name}-2.4GHz-guest WLAN)
 -> Show Advanced Options -> Access Control:
-create new Layer3/4 ACL:
-set Name to guest-acl
-set Default Mode to Allow all by default
-set Rules to:
-| Order | Description  | Type  | Src | Destination Addr.  | Advanced Options   |
-|-------|--------------|-------|-----|--------------------|--------------------|
-| 1     | gateway      | Allow | Any | 192.168.10.1/32    | Any, Any, Any, Any |
-| 2     |              | Deny  | Any | 192.168.0.0/16     | Any, Any, Any, Any |
-| 3     |              | Deny  | Any | 10.0.0.0/8         | Any, Any, Any, Any |
-| 4     |              | Deny  | Any | 172.16.0.0/12      | Any, Any, Any, Any |
-(click OK)
+set Layer3/4 ACL to guest-acl (This Layer3/4 ACL was prepared earlier.)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 5 GHz only
@@ -182,10 +191,7 @@ set BSS Min Rate to Default
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
-create new allowlist:
-set Name to guest-allowlist
-enable Auto Allowlist
-(click OK)
+set allowlist to guest-allowlist (This allowlist was prepared earlier.)
 set Directed MC/BC Threshold to 0
 
 WiFi Networks -> Create WLAN:
@@ -195,17 +201,7 @@ set Authentication Method to Open
 set Encryption Method to WPA2
 set Password (Use the same password as for the 5 GHz {Name}-guest WLAN)
 -> Show Advanced Options -> Access Control:
-set Layer3/4 ACL to existing guest-acl or create new Layer3/4 ACL:
-set Name to guest-acl
-set Default Mode to Allow all by default
-set Rules to:
-| Order | Description  | Type  | Src | Destination Addr.  | Advanced Options   |
-|-------|--------------|-------|-----|--------------------|--------------------|
-| 1     | gateway      | Allow | Any | 192.168.10.1/32    | Any, Any, Any, Any |
-| 2     |              | Deny  | Any | 192.168.0.0/16     | Any, Any, Any, Any |
-| 3     |              | Deny  | Any | 10.0.0.0/8         | Any, Any, Any, Any |
-| 4     |              | Deny  | Any | 172.16.0.0/12      | Any, Any, Any, Any |
-(click OK)
+set Layer3/4 ACL to guest-acl (This Layer3/4 ACL was prepared earlier.)
 -> Show Advanced Options -> Radio Control:
 disable Background Scanning
 enable WLAN on 2.4 GHz only
@@ -215,10 +211,7 @@ set BSS Min Rate to Default
 set Inactivity Timeout to 500
 enable Isolate wireless client traffic from other clients on the same AP.
 enable Isolate wireless client traffic from all hosts on the same VLAN/subnet.
-set allowlist to existing guest-allowlist or create new allowlist:
-set Name to guest-allowlist
-enable Auto Allowlist
-(click OK)
+set allowlist to guest-allowlist (This allowlist was prepared earlier.)
 set Directed MC/BC Threshold to 0
 
 Access Points -> Group View -> System Default -> Edit AP Group -> Radio (2.4G):
